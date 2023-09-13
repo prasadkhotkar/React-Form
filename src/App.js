@@ -21,49 +21,54 @@ function App() {
      console.log(formData);
   }
   return (
-    <div className='flex flex-col items-center mt-2 border-2 w-[60vw] m-auto'>
-      <form onSubmit={submitHandeler}>
+    <div className='flex flex-col items-center mt-2 border-4 w-[60vw] m-auto rounded-md bg-orange-100'>
+      <h1 className='text-center font-bold text-[2rem]'>Registration Form</h1>
+      <form onSubmit={submitHandeler} className='my-4'>
          
-        <label htmlFor="firstName">firstName</label>
+        <label htmlFor="firstName" className='font-bold text-lg' >First Name</label>
         <br/>
         <input type="text" 
         name="firstName"
         id="firstName"
-        placeholder="prasad"
+        placeholder="Prasad"
         value={FormData.firstName}
         onChange={changeHandeler} 
-        className="outline w-[40vw] px-2 rounded-md h-[4vh] shadow-md shadow-cyan-500/50"
+        className=" w-[40vw] px-2 rounded-md h-[4vh] border-2 border-b-cyan-200 "
         />
 
      <br />
-       <label htmlFor="lastName">Last Name</label>
+       <label htmlFor="lastName" className='font-bold text-lg'>Last Name</label>
         <br/>
         <input type="text" 
         name="lastName"
         id="lastName"
-        placeholder="khotkar"
+        placeholder="Khotkar"
         value={FormData.lastName}
         onChange={changeHandeler} 
-        className="outline"/>
+        className=" w-[40vw] px-2 rounded-md h-[4vh] border-2 border-t-cyan-200 "
+        />
         
         <br />
-       <label htmlFor="email">Email Address</label>
+       <label htmlFor="email" className='font-bold text-lg'>Email Address</label>
         <br/>
         <input type="email" 
         name="email"
         id="email"
-        placeholder="prasadkhotkar916@gmail.com"
+        placeholder="prasadkhotkar11@gmail.com"
         value={FormData.email}
         onChange={changeHandeler} 
-        className="outline"/>
+        className=" w-[40vw] px-2 rounded-md h-[4vh] border-2 border-b-cyan-200 "
+        />
          
          <br />
-        <label htmlFor="country">country</label>
+        <label htmlFor="country" className='font-bold text-lg'>country</label>
         <br />
         <select 
         name="country"
         id="country"
-        value={FormData.country}>
+        value={FormData.country}
+        className=" w-[40vw] px-2 rounded-md h-[4vh] border-2 border-t-cyan-200 "
+        >
            
            <option >India</option>
            <option >United States</option>
@@ -72,7 +77,7 @@ function App() {
         </select>
 
         <br/>
-        <label htmlFor="streetAddress">Street Address</label>
+        <label htmlFor="streetAddress"className='font-bold text-lg'>Street Address</label>
         <br/>
         <input type="text" 
         name="streetAddress"
@@ -80,10 +85,11 @@ function App() {
         placeholder="B-58"
         value={FormData.streetAddress}
         onChange={changeHandeler} 
-        className="outline"/>
+        className=" w-[40vw] px-2 rounded-md h-[4vh] border-2 border-b-cyan-200  "
+        />
 
          <br/>
-        <label htmlFor="city">City</label>
+        <label htmlFor="city" className='font-bold text-lg'>City</label>
         <br/>
         <input type="text" 
         name="city"
@@ -91,10 +97,11 @@ function App() {
         placeholder="pune"
         value={FormData.city}
         onChange={changeHandeler} 
-        className="outline"/>
+        className=" w-[40vw] px-2 rounded-md h-[4vh] border-2 border-t-cyan-200 "
+        />
         
         <br/>
-        <label htmlFor="state">State /province</label>
+        <label htmlFor="state"className='font-bold text-lg'>State /province</label>
         <br/>
         <input type="text" 
         name="state"
@@ -102,10 +109,11 @@ function App() {
         placeholder="Maharashtra"
         value={FormData.state}
         onChange={changeHandeler} 
-        className="outline"/>
+        className=" w-[40vw] px-2 rounded-md h-[4vh] border-2 border-b-cyan-200 "
+        />
 
         <br/>
-        <label htmlFor="postalCode">PostalCode</label>
+        <label htmlFor="postalCode" className='font-bold text-lg'>PostalCode</label>
         <br/>
         <input type="text" 
         name="postalCode"
@@ -113,14 +121,15 @@ function App() {
         placeholder="113245"
         value={FormData.postalCode}
         onChange={changeHandeler} 
-        className="outline"/>
+        className=" w-[40vw] px-2 rounded-md h-[4vh] border-2 border-t-cyan-200 "
+        />
        
        <br />
        <br />
        <fieldset>
 
-        <legend>By Email</legend>
-        <div className="flex">
+        <legend className='my-2 text-lg font-bold'>By Email</legend>
+        <div className="flex gap-2">
         <input 
         type="checkbox" 
         id="comments"
@@ -128,13 +137,13 @@ function App() {
         checked={FormData.comments}
         onChange={changeHandeler} 
         />
-        <div>
-          <label htmlFor="comments">Comments</label>
-          <p>Get notified when someones posts a comments on a posting.</p>
+       <label htmlFor="comments" className='font-bold'>Comments</label>
         </div>
-        </div>
+        <p className='px-5'>Get notified when someones posts a comments on a posting.</p>
+        
+        
 
-        <div className="flex">
+        <div className="flex gap-2">
         <input 
         type="checkbox" 
         id="candidates"
@@ -142,13 +151,13 @@ function App() {
         checked={FormData.candidates}
         onChange={changeHandeler} 
         />
-        <div>
-          <label htmlFor="candidates">Candidates</label>
-          <p>Get notified when a candidate applies for a job.</p>
-        </div>
-        </div>
+          <label htmlFor="candidates" className='font-bold'>Candidates</label>
+          </div>
+          <p className='px-5'>Get notified when a candidate applies for a job.</p>
+      
+        
 
-        <div className="flex">
+        <div className="flex gap-2">
         <input 
         type="checkbox" 
         id="offers"
@@ -156,18 +165,18 @@ function App() {
         checked={FormData.offers}
         onChange={changeHandeler} 
         />
-        <div>
-          <label htmlFor="offers">Offers</label>
-          <p>Get notified when a candidate accepts or rejects an offer.</p>
-        </div>
-        </div>
+        <label htmlFor="offers" className='font-bold'>Offers</label>
+          </div>
+          <p className='px-5'>Get notified when a candidate accepts or rejects an offer.</p>
+        
+      
 
        </fieldset>
 
         <br />
         <br />
         <fieldset>
-         <legend>Push Notifications</legend>
+         <legend className='font-bold'>Push Notifications</legend>
          <p>These are delivered via SMS to your mobile phone.</p>
          
 
@@ -178,7 +187,7 @@ function App() {
          value="Everything" 
          onChange={changeHandeler}
          />
-         <label htmlFor="pushEverything">Everything</label>
+         <label htmlFor="pushEverything" className='font-bold px-2.5'>Everything</label>
       
       <br />
          <input 
@@ -188,7 +197,7 @@ function App() {
          value="Same as email" 
          onChange={changeHandeler}
          />
-         <label htmlFor="pushEmail">Same as email</label>
+         <label htmlFor="pushEmail" className='font-bold px-2.5'>Same as email</label>
         
         <br />
          <input 
@@ -198,10 +207,10 @@ function App() {
          value="No Push Notifications" 
          onChange={changeHandeler}
          />
-         <label htmlFor="pushNothing">No push Notifications</label>
+         <label htmlFor="pushNothing" className='font-bold px-2.5'>No push Notifications</label>
         </fieldset>
 
-        <button className="bg-blue-500 text-white font-bold rounded py-2 px-4">Save</button>
+        <button className=" text-white font-bold rounded py-2 px-4  w-[40vw] my-3 bg-blue-400">Save</button>
       </form>
 
     </div>
